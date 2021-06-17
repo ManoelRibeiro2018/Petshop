@@ -1,5 +1,6 @@
 package validations;
 
+import Context.VeterinarioDado;
 import models.Veterinario;
 
 public class VeterinarioNegocio {
@@ -61,6 +62,10 @@ public class VeterinarioNegocio {
 	        if (v.getMatricula().trim().length() > 100) {
 	            throw new Exception("O matrícula do Veterinario tem ter menos de 100 caracteres");
 	        }	       
+	        
+	        
+	        VeterinarioDado persistence = new VeterinarioDado();
+	        persistence.CadastrarVeterinario(v);
 
 	     }
 	    
@@ -121,7 +126,8 @@ public class VeterinarioNegocio {
 		        if (v.getMatricula().trim().length() > 100) {
 		            throw new Exception("O matrícula do Veterinario tem ter menos de 100 caracteres");
 		        }	        
-		        
+		        VeterinarioDado persistence = new VeterinarioDado();
+		        persistence.AtualizarVeterinario(v);;
 	     
 	    }
 }

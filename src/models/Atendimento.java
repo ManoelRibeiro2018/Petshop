@@ -7,18 +7,14 @@ import java.util.List;
 
 public class Atendimento {
 
+	private int ID;
 	private Cliente cliente;
 	private Funcionario funcionario;
 	private LocalDateTime dataDeAtendimento;
 	private List<Servico> servicos = new ArrayList<>();
 	private BigDecimal valorTotal;
 	
-	public Atendimento(Cliente cliente, Funcionario funcionario, BigDecimal valorTotal) {
-		this.cliente = cliente;
-		this.funcionario = funcionario;
-		this.dataDeAtendimento = LocalDateTime.now();
-		this.valorTotal = valorTotal;
-	}
+	public Atendimento() {}
 
 
 	public Cliente getCliente() {
@@ -62,6 +58,16 @@ public class Atendimento {
 
 	public void setValorTotal(BigDecimal valorTotal) {
 		this.valorTotal = valorTotal;
+	}
+
+
+	public int getID() {
+		return ID;
+	}
+
+
+	public void setID(int id) {
+		this.ID = id;
 	}
 
 

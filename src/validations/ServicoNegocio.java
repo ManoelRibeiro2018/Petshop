@@ -1,6 +1,7 @@
 package validations;
 
 
+import Context.ServicoDado;
 import models.Servico;
 
 public class ServicoNegocio {
@@ -30,6 +31,9 @@ public class ServicoNegocio {
 			throw new Exception("Preço total inválido");
 		}
 		
+		ServicoDado persistence = new ServicoDado();
+		persistence.CadastrarServico(s);
+		
 
 	}
 	public void utualizarServico(Servico s) throws Exception {
@@ -57,6 +61,9 @@ public class ServicoNegocio {
 		if (s.getPreco().signum() <= 0) {
 			throw new Exception("Preço total inválido");
 		}
+		
+		ServicoDado persistence = new ServicoDado();
+		persistence.AtualizarServico(s);
 
 	}
 

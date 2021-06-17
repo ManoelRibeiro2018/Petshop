@@ -3,24 +3,16 @@ package models;
 import java.util.Date;
 
 public abstract class Pessoa {
-	
+	protected int ID;
 	protected String nome;
 	protected String cpf;
 	protected String email;
 	protected String telefone;
 	protected Date dataNascimento;
 	
+	public abstract Integer getID();
+	public abstract void setID(int id);
 	
-	public Pessoa(String nome, String cpf, String email, String telefone, Date dataNascimento) {
-		
-		this.nome = nome;
-		this.cpf = cpf;
-		this.email = email;
-		this.telefone = telefone;
-		this.dataNascimento = dataNascimento;
-	}
-
-
 	public abstract String getNome();
 	
 	public abstract void setNome(String nome);

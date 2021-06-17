@@ -1,7 +1,8 @@
 package models;
 
 public class Pet {
-
+	
+	private int ID;
 	private String nome;
 	private String especie;
 	private int idade;
@@ -39,6 +40,12 @@ public class Pet {
 	}
 	public void setResponsavel(Cliente responsavel) {
 		this.responsavel = responsavel;
+	}
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
 	}
 	
 	

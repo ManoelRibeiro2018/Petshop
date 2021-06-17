@@ -6,20 +6,13 @@ import java.util.List;
 
 public class Servico {
 
-	
+	private int ID;
 	private String nome;
 	private BigDecimal preco;
 	private Funcionario funcionario;
 	private List<Atendimento> atendimentos = new ArrayList<>();
 	
-	public Servico(String nome, BigDecimal preco, Funcionario funcionario) {
 		
-		this.nome = nome;
-		this.preco = preco;
-		this.funcionario = funcionario;
-	}
-	
-	
 	public String getNome() {
 		return nome;
 	}
@@ -39,13 +32,18 @@ public class Servico {
 		this.funcionario = funcionario;
 	}
 
-
 	public List<Atendimento> getAtendimentos() {
 		return atendimentos;
 	}
 
 	public void setAtendimentos(Atendimento atendimento) {
 		this.atendimentos.add(atendimento);
+	}
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
 	}
 	
 	

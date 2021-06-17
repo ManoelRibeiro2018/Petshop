@@ -1,5 +1,6 @@
 package validations;
 
+import Context.PetDado;
 import models.Pet;
 
 public class PetNegocio {
@@ -52,7 +53,8 @@ public class PetNegocio {
 		            throw new Exception("O pet deverá ter um responsável");
 		        }
 		        
-		       
+		       PetDado persistence = new PetDado();
+		       persistence.CadastrarPet(p);
 		      	        
 	   }
 	    
@@ -104,5 +106,8 @@ public class PetNegocio {
 		        if(p.getResponsavel() == null) {
 		            throw new Exception("O pet deverá ter um responsável");
 		        }
+		        
+		        PetDado persistence = new PetDado();
+			    persistence.AtualizarPet(p);
 	    }
 }

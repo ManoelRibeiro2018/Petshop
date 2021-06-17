@@ -1,5 +1,6 @@
 package validations;
 
+import Context.ClienteDado;
 import models.Cliente;
 
 public class ClienteNegocio {
@@ -51,8 +52,11 @@ public class ClienteNegocio {
 		}
 		if (c.getDataDeNascimento().toString() == "") {
 			throw new Exception("Informe a data de nascimento");
-		}
-
+		}		
+		
+		ClienteDado persistence = new ClienteDado();
+		persistence.CadastrarCliente(c);
+		
 	}
 
 	public void atualizarCliente(Cliente c) throws Exception {
@@ -104,6 +108,9 @@ public class ClienteNegocio {
 		if (c.getDataDeNascimento().toString() == "") {
 			throw new Exception("Informe a data de nascimento");
 		}
+		
+		ClienteDado persistence = new ClienteDado();
+		persistence.AtualizarCliente(c);
 
 	}
 

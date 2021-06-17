@@ -1,5 +1,6 @@
 package validations;
 
+import Context.AtendimentoDado;
 import models.Atendimento;
 
 public class AtendimentoNegocio {
@@ -12,6 +13,9 @@ public class AtendimentoNegocio {
 		if (a.getCliente() == null) {
 			throw new Exception("O atendimento deverá está atrelado a algum cliente");
 		}
+		if(a.getFuncionario() == null) {
+			throw new Exception("O atendimento deverá está atrelado a algum funcionario");
+		}
 		if (a.getDataDeAtendimento().toString() == "") {
 			throw new Exception("Informe a data do atendimento");
 		}
@@ -21,7 +25,9 @@ public class AtendimentoNegocio {
 		if (a.getValorTotal().signum() <= 0) {
 			throw new Exception("Valor total inválido");
 		}
-
+		
+		AtendimentoDado persistence = new AtendimentoDado();
+		persistence.CadastrarAtendimento(a);
 	
 	}
 }

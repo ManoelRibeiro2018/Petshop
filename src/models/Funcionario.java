@@ -9,12 +9,7 @@ public class Funcionario extends Pessoa {
 	private String matricula;
 	private List<Servico> servicos = new ArrayList<>();
 
-	public Funcionario(String nome, String cpf, String email, String telefone, Date dataNascimento, String matricula) {
-
-		super(nome, cpf, email, telefone, dataNascimento);
-		this.matricula = matricula;
-		
-	}
+	public Funcionario() {	}
 
 	@Override
 	public String getNome() {
@@ -76,7 +71,7 @@ public class Funcionario extends Pessoa {
 
 	@Override
 	public void setDataDeNascimento(Date dateDeNascimento) {
-		this.dataNascimento = dataNascimento;
+		this.dataNascimento = dateDeNascimento;
 
 	}
 
@@ -94,6 +89,16 @@ public class Funcionario extends Pessoa {
 
 	public void setServicos(Servico servico) {
 		this.servicos.add(servico);
+	}
+
+	@Override
+	public Integer getID() {
+		return this.ID;
+	}
+
+	@Override
+	public void setID(int id) {
+		this.ID = id;
 	}
 	
 	

@@ -1,5 +1,7 @@
 package validations;
 
+import Context.ClienteDado;
+import Context.FuncionarioDado;
 import models.Funcionario;
 
 public class FuncionarioNegocio {
@@ -63,6 +65,8 @@ public class FuncionarioNegocio {
 	        }	        
 	        
 	       
+	        FuncionarioDado percistence = new FuncionarioDado();
+	        percistence.Cadastrarfuncionario(f);
 	  
 	     }
 	    
@@ -122,8 +126,10 @@ public class FuncionarioNegocio {
 		        
 		        if (f.getMatricula().trim().length() > 100) {
 		            throw new Exception("O matrícula do funcinario tem ter menos de 100 caracteres");
-		        }	        
+		        }	      
 		        
+		        FuncionarioDado percistence = new FuncionarioDado();
+		        percistence.Atualizarfuncionario(f);
 	     
 	    }
 }

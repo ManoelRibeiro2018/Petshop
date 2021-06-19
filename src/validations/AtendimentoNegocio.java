@@ -1,33 +1,76 @@
-package validations;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Validations;
 
 import Context.AtendimentoDado;
-import models.Atendimento;
+import Models.Atendimento;
 
+/**
+ *
+ * @author manoel.ribeiro.neto
+ */
 public class AtendimentoNegocio {
-	public void inserirServico(Atendimento a) throws Exception {
+    public void inserirAtendimento(Atendimento a) throws Exception {
 
 		if (a == null) {
-			throw new Exception("Insira os dados do serviÁo");
+			throw new Exception("Insira os dados do atendimento");
 		}
 
 		if (a.getCliente() == null) {
-			throw new Exception("O atendimento dever· est· atrelado a algum cliente");
+			throw new Exception("O atendimento dever√° est√° atrelado a algum cliente");
 		}
 		if(a.getFuncionario() == null) {
-			throw new Exception("O atendimento dever· est· atrelado a algum funcionario");
+			throw new Exception("O atendimento dever√° est√° atrelado a algum funcionario");
 		}
 		if (a.getDataDeAtendimento().toString() == "") {
 			throw new Exception("Informe a data do atendimento");
 		}
 		if (a.getServicos() == null) {
-			throw new Exception("O atendimento dever· conter a algum serviÁo");
+			throw new Exception("O atendimento dever√° conter a algum servi√ßo");
 		}
 		if (a.getValorTotal().signum() <= 0) {
-			throw new Exception("Valor total inv·lido");
+			throw new Exception("Valor total inv√°lido");
 		}
 		
 		AtendimentoDado persistence = new AtendimentoDado();
 		persistence.CadastrarAtendimento(a);
 	
 	}
+    
+       public void atualzarAtendimento(Atendimento a) throws Exception {
+
+		if (a == null) {
+			throw new Exception("Insira os dados do atendimento");
+		}
+
+		if (a.getCliente() == null) {
+			throw new Exception("O atendimento dever√° est√° atrelado a algum cliente");
+		}
+		if(a.getFuncionario() == null) {
+			throw new Exception("O atendimento dever√° est√° atrelado a algum funcionario");
+		}
+		if (a.getDataDeAtendimento().toString() == "") {
+			throw new Exception("Informe a data do atendimento");
+		}
+		if (a.getServicos() == null) {
+			throw new Exception("O atendimento dever√° conter a algum servi√ßo");
+		}
+		if (a.getValorTotal().signum() <= 0) {
+			throw new Exception("Valor total inv√°lido");
+		}
+		
+		AtendimentoDado persistence = new AtendimentoDado();
+		persistence.CadastrarAtendimento(a);
+	
+	}
+         public void removerAtendimento(Atendimento a) throws Exception {
+                if (a == null) {
+                   throw new Exception("Selecione um atendimento para remover");
+		}
+                AtendimentoDado persistence = new AtendimentoDado();
+		persistence.DeletarAtendimento(a);
+         }
 }

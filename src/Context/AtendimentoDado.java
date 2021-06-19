@@ -1,18 +1,23 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Context;
 
-import java.math.BigDecimal;
+import Database.PetShopDatabase;
+import Models.Atendimento;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import Database.PetShopDatabase;
-import models.Atendimento;
-import models.Veterinario;
-
-public class AtendimentoDado extends PetShopDatabase {
-	
-	private  PreparedStatement ps;
+/**
+ *
+ * @author manoel.ribeiro.neto
+ */
+public class AtendimentoDado  extends PetShopDatabase{
+    private  PreparedStatement ps;
 	public void CadastrarAtendimento(Atendimento atendimento) throws SQLException, Exception {
 		String query = "INSERT INTO atendimento(idCliente, idFuncionario, dataDeAtendimento,  valorTotal) ";
 				query += "VALUES(?,?,?,?)";

@@ -1,13 +1,21 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Context;
 
+import Database.PetShopDatabase;
+import Models.Funcionario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import Database.PetShopDatabase;
-import models.Funcionario;
-
+/**
+ *
+ * @author manoel.ribeiro.neto
+ */
 public class FuncionarioDado extends PetShopDatabase {
 
 	private  PreparedStatement ps;
@@ -87,6 +95,5 @@ public class FuncionarioDado extends PetShopDatabase {
 	        super.desconectar();
 	        return retorno;
 	    }
-	
 	
 }

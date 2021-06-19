@@ -1,10 +1,19 @@
-package validations;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Validations;
 
 import Context.PetDado;
-import models.Pet;
+import Models.Pet;
 
+/**
+ *
+ * @author manoel.ribeiro.neto
+ */
 public class PetNegocio {
-	 public void inserirPet(Pet p) throws Exception {
+    public void inserirPet(Pet p) throws Exception {
 		    
 		        if (p == null  ) {
 		            throw new Exception("Insira os dados do pet");
@@ -20,7 +29,7 @@ public class PetNegocio {
 		            throw new Exception("O nome do pet tem ter menos de 100 caracteres");
 		        }
 		        if (p.getNome().trim().length() < 3) {
-		            throw new Exception("O Nome do pet n„o pode ter menos de 3 caracteres");
+		            throw new Exception("O Nome do pet n√£o pode ter menos de 3 caracteres");
 		        }
 		        if (p.getEspecie() == null) {
 		            throw new Exception("Insira a especie do pet");
@@ -29,10 +38,10 @@ public class PetNegocio {
 		            throw new Exception("Insira a especie do pet");
 		        }
 		        if (p.getEspecie().trim().length() > 20) {
-		            throw new Exception("A Especie do pet n„o pode ter mais de 20 caracteres");
+		            throw new Exception("A Especie do pet n√£o pode ter mais de 20 caracteres");
 		        }
 		        if (p.getEspecie().trim().length() < 4) {
-		            throw new Exception("A Especie do pet n„o pode ter menos de 4 digitos");
+		            throw new Exception("A Especie do pet n√£o pode ter menos de 4 digitos");
 		        }
 		        if(p.getIdade() < 0) {
 		            throw new Exception("Infome corretamente a idade do pet");
@@ -44,13 +53,13 @@ public class PetNegocio {
 		            throw new Exception("Informar o nome do pet");
 		        }
 		        if (p.getRaca().trim().length() > 100) {
-		            throw new Exception("O raÁa do pet deve ter menos de 100 caracteres");
+		            throw new Exception("O ra√ßa do pet deve ter menos de 100 caracteres");
 		        }
 		        if (p.getRaca().trim().length() < 5) {
-		            throw new Exception("O raÁa do pet n„o pode ter menos de 4 caracteres");
+		            throw new Exception("O ra√ßa do pet n√£o pode ter menos de 4 caracteres");
 		        }
 		        if(p.getResponsavel() == null) {
-		            throw new Exception("O pet dever· ter um respons·vel");
+		            throw new Exception("O pet dever√° ter um respons√°vel");
 		        }
 		        
 		       PetDado persistence = new PetDado();
@@ -74,7 +83,7 @@ public class PetNegocio {
 		            throw new Exception("O nome do pet tem ter menos de 100 caracteres");
 		        }
 		        if (p.getNome().trim().length() < 3) {
-		            throw new Exception("O Nome do pet n„o pode ter menos de 3 caracteres");
+		            throw new Exception("O Nome do pet n√£o pode ter menos de 3 caracteres");
 		        }
 		        if (p.getEspecie() == null) {
 		            throw new Exception("Insira a especie do pet");
@@ -83,10 +92,10 @@ public class PetNegocio {
 		            throw new Exception("Insira a especie do pet");
 		        }
 		        if (p.getEspecie().trim().length() > 20) {
-		            throw new Exception("A Especie do pet n„o pode ter mais de 20 caracteres");
+		            throw new Exception("A Especie do pet n√£o pode ter mais de 20 caracteres");
 		        }
 		        if (p.getEspecie().trim().length() < 4) {
-		            throw new Exception("A Especie do pet n„o pode ter menos de 4 digitos");
+		            throw new Exception("A Especie do pet n√£o pode ter menos de 4 digitos");
 		        }
 		        if(p.getIdade() < 0) {
 		            throw new Exception("Infome corretamente a idade do pet");
@@ -98,16 +107,25 @@ public class PetNegocio {
 		            throw new Exception("Informar o nome do pet");
 		        }
 		        if (p.getRaca().trim().length() > 100) {
-		            throw new Exception("O raÁa do pet deve ter menos de 100 caracteres");
+		            throw new Exception("O ra√ßa do pet deve ter menos de 100 caracteres");
 		        }
 		        if (p.getRaca().trim().length() < 3) {
-		            throw new Exception("O raÁa do pet n„o pode ter menos de 3 caracteres");
+		            throw new Exception("O ra√ßa do pet n√£o pode ter menos de 3 caracteres");
 		        }
 		        if(p.getResponsavel() == null) {
-		            throw new Exception("O pet dever· ter um respons·vel");
+		            throw new Exception("O pet dever√° ter um respons√°vel");
 		        }
 		        
 		        PetDado persistence = new PetDado();
 			    persistence.AtualizarPet(p);
 	    }
+            
+             public void removerPet(Pet p) throws Exception {
+                 if (p.getID() == 0 || p == null) {  
+                     throw new Exception("Selecione um pet para remover");
+                 }
+                 
+                  PetDado persistence = new PetDado();
+			    persistence.DeletarPet(p);
+             }
 }

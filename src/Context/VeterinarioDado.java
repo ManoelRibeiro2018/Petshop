@@ -1,14 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Context;
 
+import Database.PetShopDatabase;
+import Models.Veterinario;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import Database.PetShopDatabase;
-import models.Veterinario;
-
-public class VeterinarioDado  extends PetShopDatabase{
+/**
+ *
+ * @author manoel.ribeiro.neto
+ */
+public class VeterinarioDado extends PetShopDatabase{
 	private  PreparedStatement ps;
 	public void CadastrarVeterinario(Veterinario veterinario) throws SQLException, Exception {
 		String query = "INSERT INTO veterinario(crmv, matricula, nome, cpf, email, telefone, dataNascimento) ";

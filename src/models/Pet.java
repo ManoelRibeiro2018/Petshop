@@ -1,13 +1,22 @@
-package models;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Models;
 
+/**
+ *
+ * @author manoel.ribeiro.neto
+ */
 public class Pet {
-	
-	private int ID;
+    private int ID;
 	private String nome;
 	private String especie;
 	private int idade;
 	private String raca;
 	private Cliente responsavel;
+        
 	
 	
 	
@@ -47,9 +56,4 @@ public class Pet {
 	public void setID(int iD) {
 		ID = iD;
 	}
-	
-	
-	
-	
-	
 }

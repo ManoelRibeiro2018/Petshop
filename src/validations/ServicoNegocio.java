@@ -1,34 +1,42 @@
-package validations;
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Validations;
 
 import Context.ServicoDado;
-import models.Servico;
+import Models.Servico;
 
+/**
+ *
+ * @author manoel.ribeiro.neto
+ */
 public class ServicoNegocio {
-	public void inserirServico(Servico s) throws Exception {
+    public void inserirServico(Servico s) throws Exception {
 
 		if (s == null) {
-			throw new Exception("Insira os dados do serviço");
+			throw new Exception("Insira os dados do serviÃ§o");
 		}
 
 		if (s.getNome() == null) {
-			throw new Exception("Informar o nome do serviço");
+			throw new Exception("Informar o nome do serviÃ§o");
 		}
 		if (s.getNome().trim().equals("") == true) {
-			throw new Exception("Informar o nome do serviço");
+			throw new Exception("Informar o nome do serviÃ§o");
 		}
 		if (s.getNome().trim().length() > 100) {
-			throw new Exception("O nome do serviço tem ter menos de 100 caracteres");
+			throw new Exception("O nome do serviÃ§o tem ter menos de 100 caracteres");
 		}
 		if (s.getNome().trim().length() < 4) {
-			throw new Exception("O Nome do serviço não pode ter menos de 4 caracteres");
+			throw new Exception("O Nome do serviÃ§o nÃ£o pode ter menos de 4 caracteres");
 		}
 
 		if (s.getFuncionario() == null) {
-			throw new Exception("O serviço deverá está atrelado a algum funcionário");
+			throw new Exception("O serviÃ§o deverÃ¡ estÃ¡ atrelado a algum funcionÃ¡rio");
 		}
 		if (s.getPreco().signum() <= 0) {
-			throw new Exception("Preço total inválido");
+			throw new Exception("PreÃ§o total invÃ¡lido");
 		}
 		
 		ServicoDado persistence = new ServicoDado();
@@ -39,32 +47,40 @@ public class ServicoNegocio {
 	public void utualizarServico(Servico s) throws Exception {
 		
 		if (s == null) {
-			throw new Exception("Insira os dados do serviço");
+			throw new Exception("Insira os dados do serviÃ§o");
 		}
 
 		if (s.getNome() == null) {
-			throw new Exception("Informar o nome do serviço");
+			throw new Exception("Informar o nome do serviÃ§o");
 		}
 		if (s.getNome().trim().equals("") == true) {
-			throw new Exception("Informar o nome do serviço");
+			throw new Exception("Informar o nome do serviÃ§o");
 		}
 		if (s.getNome().trim().length() > 100) {
-			throw new Exception("O nome do serviço tem ter menos de 100 caracteres");
+			throw new Exception("O nome do serviÃ§o tem ter menos de 100 caracteres");
 		}
 		if (s.getNome().trim().length() < 4) {
-			throw new Exception("O Nome do serviço não pode ter menos de 4 caracteres");
+			throw new Exception("O Nome do serviÃ§o nÃ£o pode ter menos de 4 caracteres");
 		}
 
 		if (s.getFuncionario() == null) {
-			throw new Exception("O serviço deverá está atrelado a algum funcionário");
+			throw new Exception("O serviÃ§o deverÃ¡ estÃ¡ atrelado a algum funcionÃ¡rio");
 		}
 		if (s.getPreco().signum() <= 0) {
-			throw new Exception("Preço total inválido");
+			throw new Exception("PreÃ§o total invÃ¡lido");
 		}
 		
 		ServicoDado persistence = new ServicoDado();
 		persistence.AtualizarServico(s);
 
 	}
-
+        
+        public void removerServico(Servico s) throws Exception {
+            if (s.getID() == 0 || s == null) {                
+			throw new Exception("Selecione um serviÃ§o para remover");
+            }
+            
+            ServicoDado persistence = new ServicoDado();
+		persistence.DeletarServico(s);
+        }
 }

@@ -1,20 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
+/**
+ *
+ * @author manoel.ribeiro.neto
+ */
 public class PetShopDatabase {
-	    private Connection connection;
-	    private final String DRIVER_MYSQL = "com.mysql.jdbc.Driver";
-	    private final String DRIVER_POSTGRESQL = "org.postgresql.Driver";
+     private Connection connection;
 	    private final String DRIVER_SQLSERVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-	    private final String LOCAL_SERVIDOR = "DESKTOP-7MD8PV3";
+	    private final String LOCAL_SERVIDOR = "WINAPKJ2VNHH47O\\SQLEXPRESS";
 	    private final String BANCO_DE_DADOS = "PetShop";
 	    private final String PORTA_BANCO = "1433";
-	    private final String USUARIO = "admin";
-	    private final String SENHA = "1111";
+	    private final String USUARIO = "Root";
+	    private final String SENHA = "";
 
 	    public Connection conectar() throws Exception {
 	        return this.conectarSqlServer();
@@ -30,6 +36,4 @@ public class PetShopDatabase {
 	        connection = DriverManager.getConnection(url, USUARIO, SENHA);
 	        return connection;
 	    }
-
-	
 }

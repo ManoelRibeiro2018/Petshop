@@ -1,27 +1,33 @@
-package models;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Models;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ *
+ * @author manoel.ribeiro.neto
+ */
 public class Cliente extends Pessoa {
 
-	private List<Pet> pets = new ArrayList<>();
+  private List<Pet> pets = new ArrayList<>();
 	
 
 	public Cliente() {}
 
 	@Override
 	public String getNome() {
-		// TODO Auto-generated method stub
 		return this.nome;
 	}
 
 	@Override
 	public void setNome(String nome) {
-
 		this.nome = nome;
-
 	}
 
 	@Override
@@ -32,9 +38,7 @@ public class Cliente extends Pessoa {
 
 	@Override
 	public void setCpf(String cpf) {
-
 		this.cpf = cpf;
-
 	}
 
 	@Override
@@ -64,8 +68,7 @@ public class Cliente extends Pessoa {
 
 	@Override
 	public void setDataDeNascimento(Date dateDeNascimento) {
-		// TODO Auto-generated method stub
-		this.dataNascimento = dateDeNascimento;
+	       this.dataNascimento = dateDeNascimento;
 	}
 
 	public List<Pet> getPets() {
